@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"log"
 	"time"
 
@@ -50,7 +51,7 @@ func main() {
 		nil,    // args
 	)
 	failOnError(err, "Failed to register a consumer")
-
+	fmt.Println("worker2 begin listening for messages")
 	var forever chan struct{}
 
 	go func() {
